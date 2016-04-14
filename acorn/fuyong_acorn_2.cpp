@@ -105,8 +105,8 @@ Fraction x_intercept(const pii & l1, const pii & l2) {
 
 // assumes a < b
 bool diff_over_integer(const Fraction & a, const Fraction & b) {
-    long long x = a.d % a.n;
-    long long y = b.d % b.n;
+    long long x = a.n / a.d;
+    long long y = b.n / b.d;
 
     return x < y;
 }
@@ -188,11 +188,11 @@ int main() {
 	Fraction a = x_intercept(all[good[0]], all[good[1]]);
 	Fraction b = x_intercept(all[good[0]], make_pair(0, 0));
 	Fraction c = max(a, b);
-	// cout << "AAAAAAAAAAAAAA" << endl;
 	// cout << a.n << " / " << a.d << endl;
 	// cout << b.n << " / " << b.d << endl;
 
 	if (c >= Fraction(b.n, b.d) + Fraction(1)) {
+	    // cout << "AAAAAAAAAAAAAA" << endl;
 	    ans_inverse += 1;
 	}
     }
@@ -204,9 +204,9 @@ int main() {
 	Fraction c = x_intercept(all[good[i]], make_pair(0, 0));
 
 	/*
-	cout << "0 : " << all[0].first << all[0].second << endl;
-	cout << "1 : " << all[1].first << all[1].second << endl;
-	cout << "2 : " << all[2].first << all[2].second << endl;
+	cout << "0 : " << all[0].first << ", " << all[0].second << endl;
+	cout << "1 : " << all[1].first << ", " << all[1].second << endl;
+	cout << "2 : " << all[2].first << ", " << all[2].second << endl;
 
 	cout << "a = " << a.n  << "/" << a.d << endl;
 	cout << "b = " << b.n  << "/" << b.d << endl;
