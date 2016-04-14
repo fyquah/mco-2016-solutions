@@ -32,12 +32,9 @@ public:
 	    d = 0;
 	    return;
 	}
-    
-	if (a < 0 && b < 0) {
-	    a = -a;
-	    b = -b;
-	} else if (b < 0) {
-	    // we don't want a negative denom and positive nume
+   
+	// getting rid of a negative denom
+	if (b < 0) {
 	    a = -a;
 	    b = -b;
 	}
