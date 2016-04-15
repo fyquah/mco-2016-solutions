@@ -42,6 +42,8 @@ void dijkstra(int start, int mode) {
 
 int main() {
 
+    memset(dist,-1,sizeof(dist));
+
     scanf("%lld%lld%lld%lld",&N,&M,&A,&B);
     for (int i = 0; i < M; i++) {
         ll u, v, w;
